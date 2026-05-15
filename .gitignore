@@ -18,7 +18,6 @@ __pycache__/
 *.synctex.gz
 *.bbl
 *.blg
-report/report.pdf
 
 # Office temp files
 ~$*
