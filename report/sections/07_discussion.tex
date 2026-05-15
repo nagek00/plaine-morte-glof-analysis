@@ -1,0 +1,66 @@
+\section{Discussion}
+\label{sec:discussion}
+
+\paragraph{H1 confirmed: GLOFs inflate design quantiles.}
+Both the KS test and the Rank-Sum test reject the null for Group~A, supporting H1. The
+GLOF-inclusive GEV overstates the 100-year design flood by approximately 15\,\% relative
+to the masked fit (\SI{22.14}{m^3\per s} vs.\ \SI{19.21}{m^3\per s}), growing to 19\,\%
+at the 200-year level. This magnitude of bias is consistent with findings from other
+glacierised catchments where outburst-dominated years inflate extreme-value statistics
+when pooled with rainfall- and snowmelt-driven events without prior separation
+\citep{Coles2001}. The mechanistic distinctiveness of GLOF floods --- sub-daily drainage
+pulses unrelated to catchment antecedent moisture --- makes their inclusion in a
+stationary block-maxima framework conceptually problematic, and our results quantify the
+practical consequence for infrastructure design.
+
+\paragraph{H2 supported but with a caveat.}
+Formal tests fail to reject H2: after masking, the 2011--2020 peaks are statistically
+indistinguishable from the 1944--2010 reference (KS $p = 0.498$; Rank-Sum $p = 0.412$),
+and the GLOF-masked GEV parameters align closely with the reference fit
+($\hat{\xi} \approx 0.07$--$0.08$, near-Gumbel behaviour). This supports the conclusion
+that the $\pm 5$-day masking window adequately isolates the GLOF contribution and that
+the natural-flood regime has not structurally changed.
+
+However, the probability plot reveals that 8 of 9 GLOF-masked 2011--2020 peaks lie above
+the 1:1 diagonal, suggesting a mild upward tendency that the formal tests --- with only
+$n = 9$ observations --- lack power to confirm. Several mechanisms could contribute: (i)
+intensification of convective summer precipitation under climate warming
+\citep{Doering2021}; (ii) enhanced snowmelt from accelerating glacier retreat, routing
+more meltwater directly to the channel during warm spells; (iii) reduced glacier storage
+buffering as Plaine Morte loses mass; and (iv) residual antecedent soil saturation from
+GLOF events that the masking window does not fully eliminate. Distinguishing between these
+drivers would require a longer post-GLOF record or a paired comparison with an unglaciated
+reference catchment in the same hydroclimatic region.
+
+\paragraph{Methodological considerations.}
+The use of delta-method confidence intervals for GEV quantiles goes beyond the lecture
+material, which provides CI formulas only for the Gumbel distribution (Module~2,
+Eq.~4.26). This extension is standard in extreme-value practice \citep{Wilks2011} and is
+warranted here because all three series exhibit positive shape parameters
+($\hat{\xi} > 0$), ruling out the Gumbel approximation. The AIC comparison shows that the
+GLOF-masked fit ($\Delta\mathrm{AIC} = -18.8$ relative to the full series) provides a
+substantially better-fitting model for the underlying flood population, further supporting
+the case for separating the two flood-generating mechanisms.
+
+\paragraph{Implications of the bypass intervention.}
+The construction of a supraglacial bypass channel in 2019 \citep{GeoTest2019}, extended
+with a second parallel channel in June 2022 \citep{GeoPraevent2022}, has effectively ended
+uncontrolled outburst flooding from Lac des Faverges. This makes the GLOF period
+2011--2018 a closed historical episode rather than an ongoing hazard. From a flood
+frequency perspective, this has two practical implications. First, the GLOF-masked or
+pre-GLOF reference GEV is now the appropriate design distribution for the current
+(post-bypass) regime, since future uncontrolled GLOFs are no longer expected. Second, the
+15--19\,\% overestimation of design quantiles introduced by naive pooling of GLOF and
+natural flood peaks would have led to overdesigned infrastructure had it been applied to
+post-bypass planning. Our analysis provides the statistical basis for reverting to the
+pre-GLOF reference distribution in future flood hazard assessments for the Simme at Lenk.
+
+\paragraph{Limitations and future directions.}
+The principal limitation is sample size: only seven GLOF years and nine post-GLOF
+observations constrain the test period. Non-rejection of H2 cannot be equated with
+acceptance of stationarity. Future work should (i) extend the analysis as the discharge
+record grows beyond 2020 to better characterise the post-bypass natural-flood regime;
+(ii) apply mixture models that explicitly separate the GLOF and natural flood populations
+rather than relying on masking \citep{Kite1977}; and (iii) monitor whether the bypass
+channel performs as intended under increasing lake volumes driven by continued glacier
+retreat on Plaine Morte.

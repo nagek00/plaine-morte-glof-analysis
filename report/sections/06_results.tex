@@ -1,0 +1,181 @@
+\section{Results}
+\label{sec:results}
+
+\subsection{Descriptive Statistics}
+\label{sec:results:desc}
+
+Table~\ref{tab:desc_stats} summarises the annual maxima by group. GLOF years show a mean
+annual maximum \SI{30}{\percent} higher than non-GLOF years (\SI{79.3}{m^3\per s} vs.\
+\SI{60.9}{m^3\per s}). The five largest peaks in the 77-year record all occurred in
+confirmed GLOF years.
+
+\begin{table}[H]
+  \centering
+  \caption{Descriptive statistics of the annual maximum series (1944--2020).}
+  \label{tab:desc_stats}
+  \begin{tabular}{lrrr}
+    \toprule
+    & Full series & Non-GLOF years & GLOF years \\
+    \midrule
+    $n$                        & 77   & 70   & 7    \\
+    Mean [\si{m^3\per s}]      & 62.6 & 60.9 & 79.3 \\
+    Std  [\si{m^3\per s}]      & 22.8 & 20.4 & 33.7 \\
+    Median [\si{m^3\per s}]    & 57.8 & 57.7 & 72.1 \\
+    Min / Max [\si{m^3\per s}] & 22.2 / 175.0 & 22.2 / 133.0 & 45.8 / 175.0 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{GEV Parameter Estimates}
+\label{sec:results:gev}
+
+Table~\ref{tab:gev_params} shows the MLE parameter estimates and AIC for all three fits.
+Including the GLOF years shifts $\mu$ upward by $\approx$\,3\,\si{m^3\per s} and
+increases $\xi$, pulling the upper tail to heavier values (Fréchet rather than near-Gumbel
+behaviour). GLOF masking brings all parameters close to the reference baseline.
+
+\begin{table}[H]
+  \centering
+  \caption{GEV MLE parameter estimates and AIC for the three series.}
+  \label{tab:gev_params}
+  \begin{tabular}{lrrrrl}
+    \toprule
+    Series & $n$ & $\hat{\mu}$ & $\hat{\sigma}$ & $\hat{\xi}$ & AIC \\
+    \midrule
+    Full 1944--2020        & 77 & 10.21 & 1.71 & 0.170 & 346.93 \\
+    GLOF-masked 1944--2020 & 77 & 10.13 & 1.58 & 0.093 & 328.16 \\
+    Reference 1944--2010   & 67 & 10.04 & 1.54 & 0.101 & 283.54 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsection{Design Quantiles}
+\label{sec:results:quantiles}
+
+Table~\ref{tab:quantiles} compares design quantiles across the three GEV fits. For a
+100-year return period, the GLOF-inclusive fit exceeds the masked fit by approximately
+\SI{15}{\percent} (\SI{22.14}{m^3\per s} vs.\ \SI{19.21}{m^3\per s}), growing to
+\SI{19}{\percent} at the 200-year level. The GLOF-masked and
+reference fits produce nearly identical quantiles across all return periods, supporting the
+validity of the masking approach. The three GEV curves are shown in
+Figure~\ref{fig:gev_three}.
+
+\begin{table}[H]
+  \centering
+  \caption{GEV design quantiles [\si{m^3\per s}] for selected return periods.}
+  \label{tab:quantiles}
+  \begin{tabular}{lrrrrrrr}
+    \toprule
+    $T$ [yr] & 2 & 5 & 10 & 20 & 50 & 100 & 200 \\
+    \midrule
+    Full 1944--2020      & 10.86 & 13.13 & 14.90 & 16.82 & 19.68 & 22.14 & 24.90 \\
+    GLOF-masked          & 10.72 & 12.68 & 14.09 & 15.54 & 17.57 & 19.21 & 20.95 \\
+    Reference 1944--2010 & 10.61 & 12.54 & 13.93 & 15.38 & 17.41 & 19.07 & 20.83 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{../figures/02_gev/02_gev_three_curves.png}
+  \caption{Return period plot: full (blue), GLOF-masked (green), and reference (red) GEV
+           fits with 95\,\% delta-method confidence bands. Black crosses mark GLOF-year
+           annual maxima at their empirical return period under the full-series fit.}
+  \label{fig:gev_three}
+\end{figure}
+
+\subsection{Homogeneity Tests}
+\label{sec:results:tests}
+
+\subsubsection{KS Test}
+
+Table~\ref{tab:ks} reports the KS statistics and critical values for both groups.
+Group~A (GLOF-inclusive) rejects the null at 5\%, confirming that GLOF-era peaks are
+incompatible with the pre-GLOF reference distribution. Group~B (GLOF-masked) fails to
+reject, indicating that masking successfully restores consistency with the reference.
+
+\begin{table}[H]
+  \centering
+  \caption{KS test results: 2011--2020 peaks vs.\ reference GEV (1944--2010).
+           $n = 9$; critical value $C_{0.05} = K_{0.05}/(\sqrt{n}+0.12+0.11/\sqrt{n}) = 0.433$.}
+  \label{tab:ks}
+  \begin{tabular}{lcccl}
+    \toprule
+    Group & $D_n$ & $C_{0.05}$ & $p$-value & Decision \\
+    \midrule
+    A: GLOF-inclusive & 0.481 & 0.433 & 0.022 & Reject $H_0$ at 5\% \\
+    B: GLOF-masked    & 0.274 & 0.433 & 0.498 & Fail to reject $H_0$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Rank-Sum Test}
+
+Table~\ref{tab:ranksum} shows the three Rank-Sum comparisons. Comparison~5a rejects $H_0$,
+confirming the GLOF signal is detectable in the raw data. Comparisons~5b and 5c both fail
+to reject, indicating that masking restores stochastic homogeneity and that no secular
+hydrological trend is present beyond the GLOF effect.
+
+\begin{table}[H]
+  \centering
+  \caption{Rank-Sum test results (Module~1, \S2.4.1). Two-sided, $\alpha = 0.05$.}
+  \label{tab:ranksum}
+  \begin{tabular}{llccl}
+    \toprule
+    & Comparison & $W$ & $p$-value & Decision \\
+    \midrule
+    5a & GLOF-year full vs.\ non-GLOF       & 81.0  & 0.032 & Reject $H_0$ \\
+    5b & GLOF-year masked vs.\ non-GLOF     & 64.0  & 0.412 & Fail to reject $H_0$ \\
+    5c & Pre-GLOF era vs.\ post-GLOF masked & 310.0 & 0.814 & Fail to reject $H_0$ \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\subsubsection{Probability Plot}
+
+Figure~\ref{fig:pp} shows the probability plot (Module~1, \S3.2) for both groups.
+Group~A points lie consistently above the 1:1 diagonal, reflecting the strong GLOF-induced
+positive bias in the upper tail.
+
+Group~B (GLOF-masked) shows a more subtle but noteworthy pattern: 8 out of 9 points also
+lie above the diagonal, indicating that even the non-GLOF peaks from 2011--2020 tend to
+exceed what the pre-GLOF reference GEV would predict. Despite this systematic visual
+tendency, both the KS test ($p = 0.498$, $D_n < C_{0.05}$) and the Rank-Sum test
+($p = 0.412$) fail to reject $H_0$, so Group~B remains statistically consistent with the
+reference at the 5\,\% level. The small sample size ($n = 9$) means the tests have limited
+power to detect moderate departures, and the observed shift does not cross the formal
+significance threshold.
+
+Several physical mechanisms could explain the mild but persistent above-diagonal tendency
+of Group~B:
+\begin{itemize}
+  \item \textbf{Hydroclimatic intensification.} A warming climate increases the frequency
+        and intensity of convective precipitation events in alpine catchments, which are the
+        primary driver of non-GLOF summer floods in the Simme. Even without GLOF
+        contribution, annual maxima may be trending upward on a multi-decadal timescale.
+  \item \textbf{Enhanced snowmelt contribution.} Higher spring and early-summer temperatures
+        since the 2000s amplify the snowmelt component of peak flows, systematically
+        elevating annual maxima independently of direct GLOF injection.
+  \item \textbf{Reduced glacier buffering.} As the Plaine Morte and surrounding glaciers
+        lose mass, less meltwater is stored in ice and more is routed directly to the
+        stream during warm periods, increasing peak discharge potential.
+  \item \textbf{Residual GLOF influence.} The $\pm 5$-day masking window may not fully
+        capture antecedent soil saturation or elevated baseflow caused by the GLOF, leaving
+        a minor imprint on the masked annual maximum in some years.
+  \item \textbf{Natural variability.} With only 9 observations, a purely random cluster
+        above the diagonal has non-negligible probability even under a stationary null.
+        The pattern may simply reflect sampling noise in a short record.
+\end{itemize}
+
+\begin{figure}[H]
+  \centering
+  \includegraphics[width=\linewidth]{../figures/03_tests/03_reference_gev_test.png}
+  \caption{Left: 2011--2020 peaks on the reference GEV return-period curve.
+           Right: probability plot (Module~1, \S3.2) of Group~A (crimson circles) and
+           Group~B (blue triangles) against the reference GEV (1944--2010). Points above
+           the 1:1 diagonal indicate heavier-than-reference behaviour. Group~A lies
+           entirely above the diagonal (strong GLOF inflation). Group~B lies above the
+           diagonal in 8 of 9 years, suggesting a mild but statistically non-significant
+           upward tendency in the post-2010 non-GLOF peaks.}
+  \label{fig:pp}
+\end{figure}

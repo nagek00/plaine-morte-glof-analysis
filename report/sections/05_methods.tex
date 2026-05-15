@@ -1,0 +1,47 @@
+\section{Methods}
+\label{sec:methods}
+
+\subsection{Series Construction and GLOF Masking}
+
+Annual block maxima are extracted from the daily discharge record (Module~2, \S4.1).
+Three annual maximum series (AMS) are constructed for comparison: (i) the \textbf{full}
+1944--2020 series, (ii) a \textbf{GLOF-masked} 1944--2020 series in which discharge
+values within $\pm 5$ days of each confirmed GLOF date are set to missing before taking
+the block maximum, and (iii) a \textbf{reference} series restricted to the pre-GLOF
+period 1944--2010. The five-day window accounts for the typical recession limb of a GLOF
+pulse at this gauge and is applied symmetrically to avoid capturing antecedent conditions.
+
+\subsection{GEV Flood Frequency Analysis}
+
+A Generalised Extreme Value (GEV) distribution (Module~2, \S4.2.2) is fitted to each of
+the three series by maximum likelihood estimation (MLE). The GEV encompasses the Gumbel
+($\xi = 0$), Fréchet ($\xi > 0$), and Weibull ($\xi < 0$) families through its shape
+parameter $\xi$, allowing the data to determine the appropriate tail behaviour. Design
+quantiles for return periods $T = 2, 5, 10, 20, 50, 100, 200$ years are derived from the
+fitted parameters. Confidence intervals on quantile estimates are computed via the delta
+method applied to the inverse Fisher information matrix --- a standard approach not
+covered in the lecture, which provides CI formulas for the Gumbel case only
+(Module~2, Eq.~4.26). Empirical return periods for plotting are assigned using Gringorten
+plotting positions (Module~1, Table~3.1). Model fit is compared across series using the
+Akaike Information Criterion (Module~2, \S5.5.2).
+
+\subsection{Homogeneity Tests}
+\label{sec:methods:tests}
+
+To test H1 and H2, two complementary approaches are applied to the ten 2011--2020
+annual maxima, using the pre-GLOF GEV as the null model.
+
+\textbf{Probability Integral Transform and KS test} (Module~1, \S1.3.1, \S3.1.2): each
+2011--2020 peak is transformed to a uniform variate via the reference GEV CDF. If the
+null holds, these values follow a Uniform(0,1) distribution. Departure is quantified with
+the one-sample Kolmogorov--Smirnov statistic, compared against the critical value
+$C_\alpha = K_\alpha / (\sqrt{n} + 0.12 + 0.11/\sqrt{n})$ with $K_{0.05} = 1.358$
+(Module~1, Eq.~3.3). Tests are run separately for the GLOF-inclusive (Group~A) and
+GLOF-masked (Group~B) 2011--2020 peaks. Because the null parameters come from an
+independent sample, no Lilliefors correction is needed. Results are visualised with a
+probability plot (Module~1, \S3.2).
+
+\textbf{Rank-Sum test} (Module~1, \S2.4.1): a non-parametric test requiring no
+distributional assumption. Three pairwise comparisons assess (a) whether GLOF-year full
+maxima differ from non-GLOF-year maxima, (b) whether masking restores homogeneity, and
+(c) whether the post-2010 non-GLOF regime differs from the pre-GLOF era.
