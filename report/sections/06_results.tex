@@ -4,47 +4,98 @@
 \subsection{Descriptive Statistics}
 \label{sec:results:desc}
 
-Table~\ref{tab:desc_stats} summarises the annual maxima by group. GLOF years show a mean
-annual maximum \SI{30}{\percent} higher than non-GLOF years (\SI{79.3}{m^3\per s} vs.\
-\SI{60.9}{m^3\per s}). The five largest peaks in the 77-year record all occurred in
-confirmed GLOF years.
+Table~\ref{tab:desc_stats} summarises the BAFU~2219 annual maxima. GLOF years show a
+mean \SI{70}{\percent} above non-GLOF years (\SI{29.35}{m^3\per s}
+vs.\ \SI{17.28}{m^3\per s}), driven largely by the 2018 event. The relative gap is
+smaller in the GRDC daily-mean series (\SI{39}{\percent}), consistent with daily
+averaging dampening brief storm peaks.
 
 \begin{table}[H]
   \centering
-  \caption{Descriptive statistics of the annual maximum series (1944--2020).}
+  \caption{Descriptive statistics of the annual maximum series (1944--2025, BAFU~2219
+           extended AMS combining Monatsmaxima 1944--1973 and Tagesmaxima 1974--2025).}
   \label{tab:desc_stats}
   \begin{tabular}{lrrr}
     \toprule
-    & Full series & Non-GLOF years & GLOF years \\
+    & Full series & Non-GLOF years & GLOF years (2011--2018) \\
     \midrule
-    $n$                        & 77   & 70   & 7    \\
-    Mean [\si{m^3\per s}]      & 62.6 & 60.9 & 79.3 \\
-    Std  [\si{m^3\per s}]      & 22.8 & 20.4 & 33.7 \\
-    Median [\si{m^3\per s}]    & 57.8 & 57.7 & 72.1 \\
-    Min / Max [\si{m^3\per s}] & 22.2 / 175.0 & 22.2 / 133.0 & 45.8 / 175.0 \\
+    $n$                        & 82   & 74   & 8    \\
+    Mean [\si{m^3\per s}]      & 18.46 & 17.28 & 29.35 \\
+    Std  [\si{m^3\per s}]      &  7.51 &  5.55 & 13.45 \\
+    Median [\si{m^3\per s}]    & 16.41 & 16.09 & 27.13 \\
+    Min / Max [\si{m^3\per s}] & 9.89 / 56.90 & 9.89 / 34.67 & 15.55 / 56.90 \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\subsection{GEV Parameter Estimates}
-\label{sec:results:gev}
+\subsection{GLOF Contribution to Annual Maxima}
+\label{sec:results:glof_contribution}
 
-Table~\ref{tab:gev_params} shows the MLE parameter estimates and AIC for all three fits.
-Including the GLOF years shifts $\mu$ upward by $\approx$\,3\,\si{m^3\per s} and
-increases $\xi$, pulling the upper tail to heavier values (Fréchet rather than near-Gumbel
-behaviour). GLOF masking brings all parameters close to the reference baseline.
+Table~\ref{tab:glof_combined} reports the annual maximum, its implied return period under
+the reference GEV, and whether the $\pm 5$-day masking window captures the annual maximum
+for each GLOF year, for both discharge records.
 
 \begin{table}[H]
   \centering
-  \caption{GEV MLE parameter estimates and AIC for the three series.}
-  \label{tab:gev_params}
-  \begin{tabular}{lrrrrl}
+  \small
+  \caption{Annual maxima during the GLOF period 2011--2018 under daily maximum discharge
+           (BAFU~2219) and daily mean discharge (GRDC). The implied return period $\hat{T}$
+           is computed under the respective pre-GLOF reference GEV (1944--2010 for both
+           datasets). ``GLOF = max?'' indicates whether the $\pm 5$-day masking window
+           contains the annual maximum.}
+  \label{tab:glof_combined}
+  \begin{tabular}{ccrrcrrcc}
     \toprule
-    Series & $n$ & $\hat{\mu}$ & $\hat{\sigma}$ & $\hat{\xi}$ & AIC \\
+    & & \multicolumn{3}{c}{Daily max.\ (BAFU 2219)} & \multicolumn{3}{c}{Daily mean (GRDC)} \\
+    \cmidrule(lr){3-5}\cmidrule(lr){6-8}
+    Year & GLOF date & $Q_\text{ann}$ & $\hat{T}$ & GLOF & $Q_\text{ann}$ & $\hat{T}$ & GLOF \\
+         &           & [\si{m^3\per s}] & [yr] & =max? & [\si{m^3\per s}] & [yr] & =max? \\
     \midrule
-    Full 1944--2020        & 77 & 10.21 & 1.71 & 0.170 & 346.93 \\
-    GLOF-masked 1944--2020 & 77 & 10.13 & 1.58 & 0.093 & 328.16 \\
-    Reference 1944--2010   & 67 & 10.04 & 1.54 & 0.101 & 283.54 \\
+    2011 & 27 Jul & 27.09 &   17.0 & No  & 15.08 &  17.4 & No  \\
+    2012 & 16 Jul & 19.12 &    3.8 & Yes & 14.56 &  13.6 & Yes \\
+    2013 &  2 Aug & 20.59 &    5.0 & Yes & 14.99 &  16.6 & Yes \\
+    2014 &  7 Aug & 40.48 &  126.7 & No  & 21.09 & 220.0 & Yes \\
+    2015 &  1 Aug & 15.55 &    1.9 & No  & 10.11 &   1.6 & Yes \\
+    2016 & 28 Aug & 27.16 &   17.2 & Yes & 13.97 &  10.2 & No  \\
+    2017 & 19 Jul & 27.95 &   19.7 & No  & 13.94 &  10.0 & Yes \\
+    2018 & 27 Jul & 56.90 &  788.8 & Yes & 19.24 & 107.1 & Yes \\
+    \midrule
+    \multicolumn{2}{c}{GLOF = ann.\ max (of 8 GLOF yrs)} & \multicolumn{3}{c}{4 / 8} & \multicolumn{3}{c}{6 / 8} \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+Under daily maxima, the GLOF produced the annual maximum in 4 of 8 years (2012, 2013,
+2016, 2018); in the remaining four, storm floods dominated, including a
+$\hat{T} \approx 127$-year event in 2014. Under daily means, GLOFs dominated in 6 of 8
+years, because their sustained outflows elevate the 24-hour average above brief
+convective peaks.
+
+\subsection{GEV Parameter Estimates}
+\label{sec:results:gev}
+
+Table~\ref{tab:gev_params} shows the MLE parameter estimates. Including GLOF years shifts
+$\hat{\xi}$ toward a heavier Fréchet tail in both datasets; masking restores it close to
+the reference value ($\Delta\hat{\xi} = +0.091$ for BAFU~2219; $+0.069$ for GRDC). The
+AIC is substantially lower for the masked than the full-series fit.
+
+\begin{table}[H]
+  \centering
+  \caption{GEV MLE parameter estimates and AIC for both discharge datasets.}
+  \label{tab:gev_params}
+  \begin{tabular}{llrrrrl}
+    \toprule
+    Dataset & Series & $n$ & $\hat{\mu}$ & $\hat{\sigma}$ & $\hat{\xi}$ & AIC \\
+    \midrule
+    \multicolumn{7}{l}{\textit{BAFU 2219 — daily maximum [\si{m^3\per s}]}} \\[2pt]
+     & Full 1944--2025        & 82 & 14.94 & 3.95 & 0.251 & 513.66 \\
+     & GLOF-masked 1944--2025 & 82 & 14.76 & 3.67 & 0.203 & 497.56 \\
+     & Reference 1944--2010   & 67 & 14.52 & 3.55 & 0.160 & 399.73 \\
+    \midrule
+    \multicolumn{7}{l}{\textit{GRDC — daily mean [\si{m^3\per s}]}} \\[2pt]
+     & Full 1944--2020        & 77 & 10.211 & 1.711 & 0.170 & 346.93 \\
+     & GLOF-masked 1944--2020 & 77 & 10.133 & 1.580 & 0.093 & 328.16 \\
+     & Reference 1944--2010   & 67 & 10.038 & 1.542 & 0.101 & 283.54 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -52,18 +103,33 @@ behaviour). GLOF masking brings all parameters close to the reference baseline.
 \subsection{Design Quantiles}
 \label{sec:results:quantiles}
 
-Table~\ref{tab:quantiles} compares design quantiles across the three GEV fits. For a
-100-year return period, the GLOF-inclusive fit exceeds the masked fit by approximately
-\SI{15}{\percent} (\SI{22.14}{m^3\per s} vs.\ \SI{19.21}{m^3\per s}), growing to
-\SI{19}{\percent} at the 200-year level. The GLOF-masked and
-reference fits produce nearly identical quantiles across all return periods, supporting the
-validity of the masking approach. The three GEV curves are shown in
-Figure~\ref{fig:gev_three}.
+Design quantiles are compared in Tables~\ref{tab:quantiles_bafu}
+and~\ref{tab:quantiles_grdc}. The GLOF-inclusive 100-year quantile exceeds the masked
+estimate by \SI{15.0}{\percent} for BAFU~2219 and \SI{16.1}{\percent} for GRDC, growing
+to 18--20\,\% at 200 years. Masked and reference fits are closely aligned in both
+datasets.
 
 \begin{table}[H]
   \centering
-  \caption{GEV design quantiles [\si{m^3\per s}] for selected return periods.}
-  \label{tab:quantiles}
+  \caption{GEV design quantiles [\si{m^3\per s}] for selected return periods --- BAFU~2219
+           extended AMS (1944--2025), with 95\,\% delta-method confidence intervals.}
+  \label{tab:quantiles_bafu}
+  \begin{tabular}{lrrrrrrr}
+    \toprule
+    $T$ [yr] & 2 & 5 & 10 & 20 & 50 & 100 & 200 \\
+    \midrule
+    Full 1944--2025      & 16.47 & 22.12 & 26.81 & 32.38 & 41.08 & 48.99 & 58.68 \\
+    GLOF-masked          & 16.17 & 21.19 & 25.18 & 29.75 & 36.61 & 42.61 & 49.71 \\
+    Reference 1944--2010 & 15.87 & 20.53 & 24.09 & 28.04 & 33.77 & 38.61 & 44.17 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
+\begin{table}[H]
+  \centering
+  \caption{GEV design quantiles [\si{m^3\per s}] for selected return periods --- GRDC
+           daily mean discharge.}
+  \label{tab:quantiles_grdc}
   \begin{tabular}{lrrrrrrr}
     \toprule
     $T$ [yr] & 2 & 5 & 10 & 20 & 50 & 100 & 200 \\
@@ -77,10 +143,12 @@ Figure~\ref{fig:gev_three}.
 
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{../figures/02_gev/02_gev_three_curves.png}
-  \caption{Return period plot: full (blue), GLOF-masked (green), and reference (red) GEV
-           fits with 95\,\% delta-method confidence bands. Black crosses mark GLOF-year
-           annual maxima at their empirical return period under the full-series fit.}
+  \includegraphics[width=\linewidth]{../figures_2219/02_gev/02_gev_three_curves.png}
+  \caption{Return period plot for BAFU~2219 extended AMS (1944--2025): full (blue),
+           GLOF-masked (green), and reference (red) GEV fits with 95\,\% delta-method
+           confidence bands. Black crosses mark GLOF-year annual maxima at their empirical
+           return period under the full-series fit. The 2018 event at
+           $\hat{T} \approx 789$\,yr dominates the upper tail.}
   \label{fig:gev_three}
 \end{figure}
 
@@ -89,93 +157,69 @@ Figure~\ref{fig:gev_three}.
 
 \subsubsection{KS Test}
 
-Table~\ref{tab:ks} reports the KS statistics and critical values for both groups.
-Group~A (GLOF-inclusive) rejects the null at 5\%, confirming that GLOF-era peaks are
-incompatible with the pre-GLOF reference distribution. Group~B (GLOF-masked) fails to
-reject, indicating that masking successfully restores consistency with the reference.
+Table~\ref{tab:ks} reports the KS statistics ($n = 8$, $C_{0.05} = 0.455$). Group~A
+(GLOF-inclusive) rejects $H_0$ in both datasets (BAFU~2219: $D_n = 0.610$, $p = 0.002$;
+GRDC: $D_n = 0.776$, $p < 0.001$). Group~B (GLOF-masked) fails to reject in both
+($D_n < 0.37$, $p > 0.19$).
 
 \begin{table}[H]
   \centering
-  \caption{KS test results: 2011--2020 peaks vs.\ reference GEV (1944--2010).
-           $n = 9$; critical value $C_{0.05} = K_{0.05}/(\sqrt{n}+0.12+0.11/\sqrt{n}) = 0.433$.}
+  \caption{KS test results: 2011--2018 peaks vs.\ pre-GLOF reference GEV (1944--2010)
+           for both discharge datasets ($n = 8$; $C_{0.05} = 0.455$).}
   \label{tab:ks}
-  \begin{tabular}{lcccl}
+  \begin{tabular}{llcccl}
     \toprule
-    Group & $D_n$ & $C_{0.05}$ & $p$-value & Decision \\
+    Dataset & Group & $D_n$ & $C_{0.05}$ & $p$-value & Decision \\
     \midrule
-    A: GLOF-inclusive & 0.481 & 0.433 & 0.022 & Reject $H_0$ at 5\% \\
-    B: GLOF-masked    & 0.274 & 0.433 & 0.498 & Fail to reject $H_0$ \\
+    \multirow{2}{*}{BAFU 2219 (daily max.)}
+      & A: GLOF-inclusive & 0.610 & 0.455 & 0.002    & Reject $H_0$ at 5\% \\
+      & B: GLOF-masked    & 0.360 & 0.455 & 0.195    & Fail to reject \\
+    \midrule
+    \multirow{2}{*}{GRDC (daily mean)}
+      & A: GLOF-inclusive & 0.776 & 0.455 & $<$0.001 & Reject $H_0$ at 5\% \\
+      & B: GLOF-masked    & 0.318 & 0.455 & 0.321    & Fail to reject \\
     \bottomrule
   \end{tabular}
 \end{table}
 
 \subsubsection{Rank-Sum Test}
 
-Table~\ref{tab:ranksum} shows the three Rank-Sum comparisons. Comparison~5a rejects $H_0$,
-confirming the GLOF signal is detectable in the raw data. Comparisons~5b and 5c both fail
-to reject, indicating that masking restores stochastic homogeneity and that no secular
-hydrological trend is present beyond the GLOF effect.
+Table~\ref{tab:ranksum} shows the Rank-Sum results. Comparison~5a rejects $H_0$ in both
+datasets. Comparison~5b fails to reject, confirming masking restores homogeneity.
+Comparison~5c (pre-GLOF reference vs.\ masked GLOF-era peaks) also fails to reject
+(BAFU~2219: $p = 0.172$; GRDC: $p = 0.233$).
 
 \begin{table}[H]
   \centering
-  \caption{Rank-Sum test results (Module~1, \S2.4.1). Two-sided, $\alpha = 0.05$.}
+  \caption{Rank-Sum test results (two-sided, $\alpha = 0.05$) for both discharge
+           datasets. Comparison~5c tests whether the masked GLOF-era peaks are consistent
+           with the pre-GLOF reference.}
   \label{tab:ranksum}
-  \begin{tabular}{llccl}
+  \begin{tabular}{lllccl}
     \toprule
-    & Comparison & $W$ & $p$-value & Decision \\
+    Dataset & & Comparison & $W$ & $p$-value & Decision \\
     \midrule
-    5a & GLOF-year full vs.\ non-GLOF       & 81.0  & 0.032 & Reject $H_0$ \\
-    5b & GLOF-year masked vs.\ non-GLOF     & 64.0  & 0.412 & Fail to reject $H_0$ \\
-    5c & Pre-GLOF era vs.\ post-GLOF masked & 310.0 & 0.814 & Fail to reject $H_0$ \\
+    \multirow{3}{*}{BAFU 2219}
+      & 5a & GLOF-year full vs.\ non-GLOF years       & 499.0 & 0.002 & Reject $H_0$ \\
+      & 5b & GLOF-year masked vs.\ non-GLOF years     & 382.0 & 0.182 & Fail to reject \\
+      & 5c & Pre-GLOF ref vs.\ masked GLOF era               & 188.0 & 0.172 & Fail to reject \\
+    \midrule
+    \multirow{3}{*}{GRDC}
+      & 5a & GLOF-year full vs.\ non-GLOF years             & 486.0 & 0.001 & Reject $H_0$ \\
+      & 5b & GLOF-year masked vs.\ non-GLOF years           & 349.0 & 0.226 & Fail to reject \\
+      & 5c & Pre-GLOF ref vs.\ masked GLOF era              & 198.0 & 0.233 & Fail to reject \\
     \bottomrule
   \end{tabular}
 \end{table}
 
-\subsubsection{Probability Plot}
-
-Figure~\ref{fig:pp} shows the probability plot (Module~1, \S3.2) for both groups.
-Group~A points lie consistently above the 1:1 diagonal, reflecting the strong GLOF-induced
-positive bias in the upper tail.
-
-Group~B (GLOF-masked) shows a more subtle but noteworthy pattern: 8 out of 9 points also
-lie above the diagonal, indicating that even the non-GLOF peaks from 2011--2020 tend to
-exceed what the pre-GLOF reference GEV would predict. Despite this systematic visual
-tendency, both the KS test ($p = 0.498$, $D_n < C_{0.05}$) and the Rank-Sum test
-($p = 0.412$) fail to reject $H_0$, so Group~B remains statistically consistent with the
-reference at the 5\,\% level. The small sample size ($n = 9$) means the tests have limited
-power to detect moderate departures, and the observed shift does not cross the formal
-significance threshold.
-
-Several physical mechanisms could explain the mild but persistent above-diagonal tendency
-of Group~B:
-\begin{itemize}
-  \item \textbf{Hydroclimatic intensification.} A warming climate increases the frequency
-        and intensity of convective precipitation events in alpine catchments, which are the
-        primary driver of non-GLOF summer floods in the Simme. Even without GLOF
-        contribution, annual maxima may be trending upward on a multi-decadal timescale.
-  \item \textbf{Enhanced snowmelt contribution.} Higher spring and early-summer temperatures
-        since the 2000s amplify the snowmelt component of peak flows, systematically
-        elevating annual maxima independently of direct GLOF injection.
-  \item \textbf{Reduced glacier buffering.} As the Plaine Morte and surrounding glaciers
-        lose mass, less meltwater is stored in ice and more is routed directly to the
-        stream during warm periods, increasing peak discharge potential.
-  \item \textbf{Residual GLOF influence.} The $\pm 5$-day masking window may not fully
-        capture antecedent soil saturation or elevated baseflow caused by the GLOF, leaving
-        a minor imprint on the masked annual maximum in some years.
-  \item \textbf{Natural variability.} With only 9 observations, a purely random cluster
-        above the diagonal has non-negligible probability even under a stationary null.
-        The pattern may simply reflect sampling noise in a short record.
-\end{itemize}
-
 \begin{figure}[H]
   \centering
-  \includegraphics[width=\linewidth]{../figures/03_tests/03_reference_gev_test.png}
-  \caption{Left: 2011--2020 peaks on the reference GEV return-period curve.
-           Right: probability plot (Module~1, \S3.2) of Group~A (crimson circles) and
-           Group~B (blue triangles) against the reference GEV (1944--2010). Points above
-           the 1:1 diagonal indicate heavier-than-reference behaviour. Group~A lies
-           entirely above the diagonal (strong GLOF inflation). Group~B lies above the
-           diagonal in 8 of 9 years, suggesting a mild but statistically non-significant
-           upward tendency in the post-2010 non-GLOF peaks.}
+  \includegraphics[width=\linewidth]{../figures_2219/03_tests/03_reference_gev_test.png}
+  \caption{Left: 2011--2018 BAFU~2219 daily-maximum peaks on the reference GEV
+           return-period curve (1944--2010). The 2018 GLOF-inclusive peak (crimson,
+           $\hat{T} \approx 789$\,yr) dominates; after masking it drops to
+           $\hat{T} \approx 1.5$\,yr (blue triangle). Right: probability plot
+           (Module~1, \S3.2). Group~A lies above the diagonal almost entirely
+           owing to 2018; Group~B is broadly consistent with the 1:1 line.}
   \label{fig:pp}
 \end{figure}

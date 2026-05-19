@@ -1,32 +1,42 @@
 \section{Conclusion}
 \label{sec:conclusion}
 
-This study demonstrates that the seven GLOFs from Plaine Morte glacier documented between
-2011 and 2018 significantly distort flood frequency statistics at the Simme gauge in Lenk.
-The key findings are:
+This study examines the influence of eight Plaine Morte GLOFs (2011--2018) on flood
+frequency statistics at the Simme gauge in Lenk, using daily maximum (BAFU~2219,
+1944--2025, $n = 82$) and daily mean discharge (GRDC~6935331, 1944--2020). The key
+findings are:
 
 \begin{enumerate}
-  \item \textbf{Statistically detectable GLOF signal.}
-        Both the KS test ($D_n = 0.481 > C_{0.05} = 0.433$) and the Rank-Sum test
-        ($p = 0.032$) reject the null hypothesis that GLOF-inclusive 2011--2020 peaks are
-        consistent with the pre-GLOF reference distribution.
+  \item \textbf{GLOF dominance depends critically on the discharge statistic.}
+        Under daily maxima (BAFU~2219), the GLOF produced the annual maximum in 4 of 8
+        GLOF years; under daily means (GRDC), in 6 of 8, because sustained outflows
+        elevate the daily average above brief storm peaks. The GLOF period also included
+        an approximately 127-year natural storm flood (2014) and three 17--20-year events
+        (2011, 2015, 2017).
+
+  \item \textbf{One extreme event dominates the signal.}
+        The 2018 outburst ($Q = 56.90$\,\si{m^3\per s}, $\hat{T} \approx 789$\,yr)
+        drives the KS rejection. After masking, its return period collapses to
+        $\hat{T} \approx 1.5$\,yr, confirming the GLOF as the mechanistic cause.
+
+  \item \textbf{Tests reject homogeneity for GLOF-inclusive peaks.}
+        KS and Rank-Sum tests reject $H_0$ for Group~A in both datasets
+        (BAFU~2219: $p = 0.002$; GRDC: $p < 0.001$). With only $n = 8$ test
+        observations, results are sensitive to a single extreme event.
 
   \item \textbf{Masking restores homogeneity.}
-        After applying a $\pm 5$-day GLOF masking window, neither test rejects $H_0$
-        (KS: $D_n = 0.274$, $p = 0.498$; Rank-Sum: $p = 0.412$). The masked era is
-        statistically indistinguishable from the 1944--2010 baseline.
+        After the $\pm 5$-day mask, neither test rejects $H_0$ in either dataset
+        (BAFU~2219: KS $p = 0.195$, Rank-Sum $p = 0.182$; GRDC: KS $p = 0.321$,
+        Rank-Sum $p = 0.226$). The secular-change check (5c) also fails to reject
+        (BAFU~2219: $p = 0.172$; GRDC: $p = 0.233$), confirming the natural-flood
+        regime is statistically unchanged across the two periods.
 
-  \item \textbf{Design flood inflation.}
-        Unmasked GEV fitting overstates the 100-year and 200-year design quantiles by
-        approximately 8--12\,\% relative to the GLOF-masked or pre-GLOF reference fit.
-
-  \item \textbf{No secular trend.}
-        There is no evidence of hydroclimatic change in the non-GLOF portion of the
-        post-2010 record (Rank-Sum 5c: $p = 0.81$), supporting the use of the full
-        1944--2020 masked series for a stationary flood frequency analysis.
+  \item \textbf{Design flood inflation is substantial but event-driven.}
+        Unmasked GEV fitting overstates the 100-year design quantile by approximately
+        15--16\,\% in both datasets, driven by the upward shift in shape parameter
+        ($\hat{\xi}: 0.160 \to 0.251$ for BAFU~2219).
 \end{enumerate}
 
-For engineering applications, we recommend using the GLOF-masked or pre-GLOF reference GEV
-as the design distribution for natural flood hazard assessment, while treating the GLOF
-contribution as a separate, superimposed hazard to be quantified through event-based GLOF
-routing rather than merged into the AMS.
+For engineering applications, the GLOF-masked or pre-GLOF reference GEV is recommended
+as the design distribution for natural flood hazard at Lenk. The 2019 bypass channel
+makes this recommendation directly applicable to current planning.

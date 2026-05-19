@@ -25,3 +25,4 @@ __pycache__/
 # OS
 .DS_Store
 Thumbs.db
+data/lake_data/2019_PLM_50cm_alt_delimited_filled.tif

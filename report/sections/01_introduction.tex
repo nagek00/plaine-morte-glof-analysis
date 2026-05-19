@@ -1,34 +1,23 @@
 \section{Introduction}
 \label{sec:intro}
 
-Flood frequency analysis (FFA) rests on the assumption of stationarity: that the sequence
-of annual maximum discharges is drawn from a single, time-invariant probability
-distribution. When a catchment is affected by a recurring process that inflates extreme
-flows in a subset of years, this assumption is violated, and fitted design quantiles can
-be misleading.
+Flood frequency analysis (FFA) rests on the assumption of stationarity: that annual
+maximum discharges are drawn from a single, time-invariant distribution. When a recurring
+process inflates extreme flows in a subset of years, this assumption is violated and
+fitted design quantiles become misleading.
 
 The Simme river (canton Bern, Switzerland) provides a compelling case study. The Plaine
-Morte glacier hosts a supraglacial lake (Lac des Faverges) whose drainage has produced
-documented Glacial Lake Outburst Floods (GLOFs) in 2011, 2012, 2013, 2014, 2015, 2017,
-and 2018. Each event releases a sub-daily flood pulse that consistently ranks among the
-largest annual flows recorded at the gauge. Since GLOFs are mechanistically distinct from
-the rainfall- and snowmelt-driven floods that dominate the pre-2011 record, their inclusion
-in a stationary FFA is conceptually problematic.
+Morte glacier hosts a supraglacial lake (Lac des Faverges) whose drainage produced eight
+documented Glacial Lake Outburst Floods (GLOFs) between 2011 and 2018. Since GLOFs are
+mechanistically distinct from the rainfall- and snowmelt-driven floods that dominate the
+pre-2011 record, their inclusion in a stationary FFA is conceptually problematic.
+Following the largest recorded GLOF in 2018, which caused approximately CHF 2.5 million
+in damage \citep{GeoTest2019}, a supraglacial bypass channel was constructed in 2019
+\citep{GeoPraevent2022}, ending the uncontrolled outburst regime. The period 2011--2018
+is therefore a closed historical episode whose statistical imprint on the long-term flood
+frequency record warrants retrospective investigation.
 
-Following the largest recorded GLOF in 2018, which caused approximately CHF 2.5 million in
-damage \citep{GeoTest2019}, a supraglacial bypass channel was excavated in summer 2019 to
-divert the lake's outflow in a controlled manner through existing englacial drainage
-systems. A second parallel channel was added in June 2022 to improve redundancy
-\citep{GeoPraevent2022}. These engineering interventions effectively ended uncontrolled
-outburst flooding after 2018, rendering the GLOF period 2011--2018 a closed historical
-episode. Understanding the statistical imprint of those seven events on the long-term flood
-frequency record therefore remains relevant for retrospective hazard assessment and for
-evaluating whether the pre-intervention design quantiles were systematically biased.
-
-This study addresses two research questions:
-\begin{enumerate}
-  \item Do recurring GLOFs systematically shift the GEV distribution fitted to the Simme
-        AMS, and if so, by how much?
-  \item Are the flood magnitudes observed since 2011 statistically consistent with the
-        catchment's natural (pre-GLOF) hydrology once the GLOF signal is removed?
-\end{enumerate}
+Both research questions are addressed in parallel using daily maximum instantaneous
+discharge (\textit{Tagesmaxima}, BAFU~2219, 1944--2025) and daily mean discharge
+(GRDC~6935331, 1944--2020), making the choice of flow-aggregation statistic a key
+methodological variable.

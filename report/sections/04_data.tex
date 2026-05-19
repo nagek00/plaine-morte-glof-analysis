@@ -1,31 +1,44 @@
 \section{Data}
 \label{sec:data}
 
-Daily mean discharge for the Simme at Oberried/Lenk (GRDC station 6935331) spans
-1 January 1944 to 31 December 2020 (28\,124 days; no gaps). The record was downloaded
-from the Global Runoff Data Centre \citep{GRDC2026} in April 2026. Discharge ranges from
-\SI{0.54}{m^3\per s} to \SI{175.0}{m^3\per s} with a daily mean of
-\SI{10.82}{m^3\per s}.
+Daily maximum discharge (\textit{Tagesmaxima}) for the Simme at Oberried/Lenk
+(BAFU/FOEN station~2219) spans 1974--2025. Combined with \textit{Monatsmaxima} for
+1944--1973 from the same station, this yields an extended Annual Maximum Series (AMS)
+of $n = 82$ years (1944--2025). The monthly and daily sub-series agree exactly over the
+overlap period (maximum difference $= 0.000$\,\si{m^3\per s}), so the two sub-series
+are spliced at 1974 without bias. Both records were obtained from the Swiss Federal
+Office for the Environment in May 2026.
 
-GLOF event dates were compiled from three independent sources: the cantonal flood archive
-\citet{GletsscherseeL2026}, the regional newspaper \citet{Simmentalzeitung2026}, and the
-scientific literature \citep{Doering2021}. The year 2016 is excluded because no major
-documented outburst occurred. Seven confirmed event dates are listed in
+The supplementary analysis uses daily mean discharge from GRDC station~6935331
+(Simme at Lenk, 1944--2020, $n = 77$), providing a 67-year pre-GLOF reference.
+
+GLOF event dates were determined from the Lac des Faverges lake-level time series
+provided by \citet{Ogier2021}, who instrumented the lake from 2012 to 2019 at
+10-minute resolution (water level, inferred volume, computed discharge). The GLOF date
+is defined as the timestamp of peak lake outflow: maximum discharge during the outburst
+phase, identified by requiring (i)~lake volume to be decreasing ($\Delta V < 0$) and
+(ii)~computed lake discharge to exceed 5\,\si{m^3\per s}. The 2011 event pre-dates the
+logger installation and is sourced from cantonal archive records. Uncontrolled outbursts
+occurred in each year from 2011 to 2018; from 2019 the bypass channel eliminates
+spontaneous outbursts. The eight confirmed event dates are listed in
 Table~\ref{tab:glof_dates}.
 
 \begin{table}[H]
   \centering
-  \caption{Confirmed GLOF event dates, Plaine Morte glacier.}
+  \caption{Confirmed GLOF event dates, Plaine Morte glacier (2011--2018). Dates are
+           peak lake outflow from the Lac des Faverges time series; 2011 from external
+           sources.}
   \label{tab:glof_dates}
   \begin{tabular}{cc}
     \toprule
     Year & GLOF date \\
     \midrule
     2011 & 27 July 2011 \\
-    2012 & 24 July 2012 \\
-    2013 & 6 August 2013 \\
-    2014 & 8 August 2014 \\
-    2015 & 3 August 2015 \\
+    2012 & 16 July 2012 \\
+    2013 &  2 August 2013 \\
+    2014 &  7 August 2014 \\
+    2015 &  1 August 2015 \\
+    2016 & 28 August 2016 \\
     2017 & 19 July 2017 \\
     2018 & 27 July 2018 \\
     \bottomrule
