@@ -11,6 +11,7 @@ from pathlib import Path
 # ── Constants ─────────────────────────────────────────────────────────────────
 
 DISCHARGE_FILE = Path("../data/raw/discharge/2026-04-26_11-35/6935331_Q_Day.Cmd.txt")
+DISCHARGE_FILE_2219 = Path("../data/raw/discharge/2219_Abfluss_Tagesmaxima_1974-01-01_2026-05-16.csv")
 
 GLOF_DATES = {
     2011: pd.Timestamp("2011-07-27"),
@@ -41,9 +42,31 @@ def load_grdc_discharge(filepath: Path = DISCHARGE_FILE) -> pd.Series:
     )
 
 
+def load_2219_discharge(filepath: Path = DISCHARGE_FILE_2219) -> pd.Series:
+    """Parse BAFU/FOEN station 2219 Tagesmaxima CSV; return daily-max Series indexed by date.
+
+    File format: 8 metadata rows, then a semicolon-separated header row, then data.
+    Relevant columns: Zeitstempel (date), Wert (daily max discharge m³/s).
+    """
+    return (
+        pd.read_csv(
+            filepath, sep=";", skiprows=8, header=0,
+            usecols=["Zeitstempel", "Wert"],
+            parse_dates=["Zeitstempel"],
+            na_values=["-", ""],
+            encoding="latin-1",
+        )
+        .rename(columns={"Zeitstempel": "date", "Wert": "Q_m3s"})
+        .set_index("date")["Q_m3s"]
+        .pipe(pd.to_numeric, errors="coerce")
+        .pipe(lambda s: s.where(s > 0))
+        .sort_index()
+    )
+
+
 def extract_annual_maxima(Q_daily: pd.Series) -> pd.Series:
     """Return annual block maxima Series indexed by integer year."""
-    Q_ann = Q_daily.resample("A").max()
+    Q_ann = Q_daily.resample("YE").max()
     Q_ann.index = Q_ann.index.year
     return Q_ann.dropna()
 
