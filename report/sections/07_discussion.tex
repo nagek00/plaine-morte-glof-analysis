@@ -1,78 +1,46 @@
 \section{Discussion}
 \label{sec:discussion}
 
-\paragraph{GLOF contribution to the AMS.}
-Under daily maximum discharge, the outburst produced the annual maximum in 4 of 8
-GLOF years (2012, 2013, 2016, 2018). In the remaining four (2011, 2014, 2015, 2017),
-independent storm floods recorded higher instantaneous peaks, including a
-$\hat{T} \approx 127$-year rainfall event in 2014 ($Q = 40.48$\,\si{m^3\per s}),
-two approximately 17--20-year events (2011, 2017), and one minor storm year
-(2015, $\hat{T} \approx 2$\,yr). Under daily mean discharge, GLOFs dominated in
-6 of 8 years, because their sustained multi-hour outflows elevate the 24-hour average
-above brief convective storm peaks. The choice of aggregation statistic therefore
-fundamentally shapes the apparent GLOF influence on the AMS: daily maxima are the more
-relevant basis for short-duration hydraulic design, while daily means better characterise
-flood volume relevant to inundation duration or reservoir routing.
-
 \paragraph{Statistical signal driven by the 2018 event.}
-The 2018 outburst ($Q = 56.90$\,\si{m^3\per s}, $\hat{T} \approx 789$\,yr under the
-reference GEV) is the primary reason the GLOF-inclusive values fail the KS test. A nearly 800-year event
-in an 8-year window is statistically improbable but not impossible ($p \approx 1\,\%$).
-The causal attribution to the GLOF rests on the masking experiment: after the $\pm 5$-day
-window, 2018's annual maximum collapses from \SI{56.90}{m^3\per s} to
-\SI{14.28}{m^3\per s} ($\hat{T} \approx 1.5$\,yr), confirming that the extreme peak was
-attributable to the outburst, not concurrent meteorological forcing. With only $n = 8$
-test observations and a critical value $C_{0.05} = 0.455$ that is itself sensitive to a
-single outlier, the formal KS test carries limited inferential weight in isolation; the
-masking experiment provides more compelling mechanistic evidence.
+The 2018 outburst ($Q = 56.90$\,\si{m^3\per s}, $\hat{T} \approx 789$\,yr) is the
+primary driver of the KS rejection. The causal attribution rests on the masking
+experiment: after the $\pm 5$-day window, 2018's annual maximum collapses to
+\SI{14.28}{m^3\per s} ($\hat{T} \approx 1.5$\,yr), confirming the extreme peak was
+attributable to the outburst, not concurrent meteorological forcing. With $n = 8$ the
+formal KS test carries limited inferential weight in isolation; the masking experiment
+provides the more compelling mechanistic evidence.
 
 \paragraph{Hypothesis 1 confirmed.}
-The KS test rejects $H_0^{(1)}$ in both datasets (BAFU~2219: $p = 0.002$; GRDC: $p < 0.001$).
-Rank-Sum comparison~5a, which directly compares the pre-GLOF reference against the
-GLOF-inclusive values, corroborates this (BAFU~2219: $p = 0.002$; GRDC: $p < 0.001$).
-Comparison~5c, using all non-GLOF years as the reference group, confirms the rejection
-with consistent $p$-values. The stronger rejection for GRDC is consistent with GLOFs
-dominating 6 of 8 years under daily means versus 4 of 8 under daily maxima. The
+The KS test and Rank-Sum comparison~5a both reject $H_0^{(1)}$ in both datasets
+(BAFU~2219: $p = 0.002$; GRDC: $p < 0.001$). The stronger rejection for GRDC reflects
+GLOFs dominating 6 of 8 years under daily means versus 4 of 8 under daily maxima. The
 full AMS GEV overstates the 100-year design flood by \SI{15.0}{\percent} for BAFU~2219
 and \SI{15.3}{\percent} for GRDC relative to the GLOF-masked estimate, driven by an
-upward shift in shape parameter ($\hat{\xi}: 0.160 \to 0.251$ for BAFU~2219). The
-inflation is dominated by the 2018 event rather than being a systematic feature of all
-eight GLOFs.
+upward shift in the shape parameter ($\hat{\xi}: 0.160 \to 0.251$ for BAFU~2219) and
+dominated by the 2018 event.
 
 \paragraph{Hypothesis 2 supported.}
-The KS test fails to reject $H_0^{(2)}$ in both datasets (BAFU~2219: $p = 0.195$;
-GRDC: $p = 0.321$). Rank-Sum comparison~5b, which directly tests the same null
-(pre-GLOF reference vs.\ GLOF-masked), also fails to reject (BAFU~2219: $p = 0.172$;
-GRDC: $p = 0.233$). Comparison~5d, using all non-GLOF years as the reference group,
-corroborates (BAFU~2219: $p = 0.182$; GRDC: $p = 0.226$). Together these confirm that
-once GLOF contributions are removed, the natural-flood regime during 2011--2018 is
-statistically indistinguishable from the pre-GLOF reference. The convergence of results
-across two different discharge statistics strengthens this conclusion.
-
-Nonetheless, Figs.~\ref{fig:gev_three} and~\ref{fig:pp} reveal a consistent upward
-tendency in the GLOF-masked peaks: the masked GEV curve lies above the reference across
-all return periods (Fig.~\ref{fig:gev_three}), and all eight GLOF-masked annual maxima
-plot above the reference diagonal in the probability plot (Fig.~\ref{fig:pp}). This
-pattern could reflect gradual hydroclimatic change during 2011--2018 --- for instance,
-increasing precipitation intensity under a warmer climate --- superimposed on the natural
-reference variability. However, with only $n = 8$ observations the KS test ($p = 0.195$)
-and Rank-Sum comparison~5b ($p = 0.172$) cannot distinguish this systematic elevation
-from sampling variability, and $H_0^{(2)}$ is not rejected at $\alpha = 0.05$. A longer
-post-bypass record is needed to determine whether this upward tendency represents a
-persistent hydroclimatic trend.
+The KS test and Rank-Sum comparison~5b both fail to reject $H_0^{(2)}$ in both datasets
+(BAFU~2219: KS $p = 0.195$, Rank-Sum $p = 0.172$; GRDC: KS $p = 0.321$, Rank-Sum
+$p = 0.233$). Once GLOF contributions are removed, the natural-flood regime during
+2011--2018 is statistically indistinguishable from the pre-GLOF reference. However,
+Figs.~\ref{fig:gev_three} and~\ref{fig:pp} reveal a consistent upward tendency: the
+masked GEV lies above the reference at all return periods and all eight GLOF-masked
+annual maxima plot above the reference diagonal. This could reflect gradual hydroclimatic
+change --- for instance, increasing precipitation intensity under a warmer climate ---
+but with $n = 8$ the tests cannot distinguish this from sampling variability. A longer
+post-bypass record is needed to assess this tendency.
 
 \paragraph{Implications of the bypass intervention.}
 The bypass channel constructed in 2019 \citep{GeoTest2019} has ended the uncontrolled
 GLOF episode. The GLOF-masked or pre-GLOF reference GEV is now the appropriate design
 distribution for natural flood hazard at Lenk. Naive inclusion of unmasked peaks
-overstates the 100-year design flood by 15\,\% and the 200-year design flood by
-18--20\,\%, which would lead to unnecessarily conservative standards in any post-bypass
-hazard reassessment.
+overstates the 100-year design flood by 15\,\% and the 200-year flood by 18--20\,\%,
+leading to unnecessarily conservative standards in any post-bypass hazard reassessment.
 
 \paragraph{Limitations.}
 The principal limitation is sample size: only $n = 8$ GLOF-period years constrain the
-test groups, making both tests sensitive to a single outlier. Failure to reject Hypothesis~2 cannot
-be interpreted as confirmation of stationarity. Future work should extend the analysis as
-post-bypass data accumulate, apply mixture models that explicitly separate the GLOF and
-natural-flood populations \citep{Kite1977}, and monitor how lake drainage dynamics evolve
-as Plaine Morte continues to lose mass.
+test groups, making results sensitive to a single outlier. Failure to reject $H_0^{(2)}$
+cannot be interpreted as confirmation of stationarity. Future work should extend the
+analysis as post-bypass data accumulate and apply mixture models that explicitly separate
+the GLOF and natural-flood populations \citep{Kite1977}.
