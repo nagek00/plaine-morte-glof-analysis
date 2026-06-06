@@ -40,7 +40,7 @@ A Generalised Extreme Value (GEV) distribution is fitted to each AMS by maximum
 likelihood estimation. The GEV encompasses Gumbel ($\xi = 0$), Fr\'{e}chet ($\xi > 0$),
 and Weibull ($\xi < 0$) families, allowing the data to determine the appropriate tail
 behaviour. Design quantiles for $T = 2, 5, 10, 20, 50, 100, 200$\,yr are derived from
-the fitted parameters with delta-method confidence intervals. Gringorten plotting
+the fitted parameters with delta-method confidence intervals \citep{Wilks2011}. Gringorten plotting
 positions are used for empirical return periods, and model fit is compared using the
 Akaike Information Criterion.
 
@@ -54,10 +54,10 @@ reference, applied identically to both datasets.
 reference GEV CDF (probability integral transform). The Kolmogorov--Smirnov statistic
 tests departure from Uniform(0,1) with critical value
 $C_\alpha = K_\alpha / (\sqrt{n} + 0.12 + 0.11/\sqrt{n})$, $K_{0.05} = 1.358$
-(Module~1, Eq.~3.3). Tests run separately for GLOF-inclusive ($n = 8$) and
+(Module~1, Eq.~3.3; \citealt{Passalacqua2026}). Tests run separately for GLOF-inclusive ($n = 8$) and
 GLOF-masked ($n = 8$).
 
-\textbf{Rank-Sum test}: the non-parametric Wilcoxon Rank-Sum test (Module~1, \S2.4.1)
+\textbf{Rank-Sum test}: the non-parametric Wilcoxon Rank-Sum test (Module~1, \S2.4.1; \citealt{Passalacqua2026})
 runs four comparisons: (5a) pre-GLOF reference vs.\ GLOF-inclusive as a direct test
 of $H_0^{(1)}$, (5b) pre-GLOF reference vs.\ GLOF-masked as a direct test of
 $H_0^{(2)}$, (5c) GLOF-inclusive vs.\ all non-GLOF years as additional corroboration
