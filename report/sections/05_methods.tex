@@ -12,6 +12,26 @@ symmetric window captures the typical GLOF recession limb at this gauge. Hypothe
 are applied exclusively to the GLOF period 2011--2018; post-2018 years are excluded
 because the bypass channel altered the outburst mechanism.
 
+From these series, the test groups summarised in Table~\ref{tab:series} are derived.
+
+\begin{table}[H]
+  \centering
+  \caption{Annual maximum series and test groups used in the homogeneity tests.}
+  \label{tab:series}
+  \begin{tabular}{llccc}
+    \toprule
+    Label & Description & Period & $n$ (BAFU~2219) & $n$ (GRDC) \\
+    \midrule
+    Reference        & Pre-GLOF annual maxima; basis for GEV fit         & 1944--2010        & 67 & 67 \\
+    Full AMS         & Complete record, GLOF-inclusive                   & 1944--2025/2020   & 82 & 77 \\
+    GLOF-masked AMS  & Full AMS with $\pm 5$-day GLOF windows removed    & 1944--2025/2020   & 82 & 77 \\
+    Group~A          & GLOF-inclusive peaks, GLOF period only            & 2011--2018        &  8 &  8 \\
+    Group~B          & GLOF-masked peaks, GLOF period only               & 2011--2018        &  8 &  8 \\
+    Non-GLOF years   & All years outside 2011--2018                      & 1944--2010, 2019--2025/2020 & 74 & 69 \\
+    \bottomrule
+  \end{tabular}
+\end{table}
+
 \subsection{GEV Flood Frequency Analysis}
 
 A Generalised Extreme Value (GEV) distribution is fitted to each AMS by maximum
