@@ -1,15 +1,29 @@
 \section{Hypotheses}
 \label{sec:hyp}
 
-\textbf{H1 (GLOF inflation):} Fitting a GEV distribution to the full annual maximum
-series (1974--2025 for BAFU~2219; 1944--2020 for GRDC) produces significantly larger
-design quantiles than fitting to the pre-GLOF reference period (before 2011), and the
-GLOF-inclusive 2011--2018 peaks are statistically incompatible with the reference
-distribution.
+The research questions are operationalised as two testable statistical hypotheses.
 
-\textbf{H2 (Masking restores homogeneity):} After replacing the GLOF-peak contribution
-with a $\pm 5$-day masked annual maximum, the 2011--2018 peaks are no longer
-statistically distinguishable from the pre-GLOF reference distribution. This would imply
-that the underlying natural-flood regime of the Simme has remained stationary, and that
-the observed shift in extreme-value statistics is attributable solely to the direct GLOF
-signal rather than to broader hydroclimatic change.
+\textbf{Hypothesis 1 --- GLOF inflation:} GLOF-inclusive annual maxima from the 2011--2018 period
+are statistically incompatible with the pre-GLOF reference GEV distribution.
+\begin{itemize}
+  \item[$H_0^{(1)}$:] The 2011--2018 full annual maxima belong to the same population as
+        the pre-GLOF reference period (no distributional shift).
+  \item[$H_1^{(1)}$:] The 2011--2018 full annual maxima are drawn from a stochastically
+        larger distribution (GLOF-inflated tail).
+\end{itemize}
+Rejection of $H_0^{(1)}$ at $\alpha = 0.05$ confirms that the GLOF signal inflates the
+tail of the annual maximum series.
+
+\textbf{Hypothesis 2 --- Regime stationarity:} Once the direct GLOF contribution is removed by
+masking, the 2011--2018 annual maxima are statistically indistinguishable from the
+pre-GLOF reference, indicating that the underlying natural-flood regime remained
+stationary.
+\begin{itemize}
+  \item[$H_0^{(2)}$:] The 2011--2018 GLOF-masked annual maxima belong to the same
+        population as the pre-GLOF reference period.
+  \item[$H_1^{(2)}$:] The 2011--2018 GLOF-masked annual maxima differ from the pre-GLOF
+        reference distribution (evidence of additional hydroclimatic change beyond GLOFs).
+\end{itemize}
+Failure to reject $H_0^{(2)}$ at $\alpha = 0.05$ supports the stationarity of the
+natural-flood regime and attributes the observed distributional shift entirely to the
+direct GLOF signal.
