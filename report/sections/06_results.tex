@@ -75,9 +75,10 @@ convective peaks.
 \label{sec:results:gev}
 
 Table~\ref{tab:gev_params} shows the MLE parameter estimates. Including GLOF years shifts
-$\hat{\xi}$ toward a heavier Fréchet tail in both datasets; masking restores it close to
-the reference value ($\Delta\hat{\xi} = +0.091$ for BAFU~2219; $+0.069$ for GRDC). The
-AIC is substantially lower for the masked than the full-series fit.
+$\hat{\xi}$ by $+0.091$ relative to the reference for BAFU~2219 and by $+0.069$ for
+GRDC; masking reduces this residual shift to $+0.043$ and $-0.008$ respectively,
+recovering near-reference tail behaviour. The AIC is substantially lower for the masked
+than the full-series fit.
 
 \begin{table}[H]
   \centering
@@ -104,8 +105,8 @@ AIC is substantially lower for the masked than the full-series fit.
 \label{sec:results:quantiles}
 
 Design quantiles are compared in Tables~\ref{tab:quantiles_bafu}
-and~\ref{tab:quantiles_grdc}. The GLOF-inclusive 100-year quantile exceeds the masked
-estimate by \SI{15.0}{\percent} for BAFU~2219 and \SI{16.1}{\percent} for GRDC, growing
+and~\ref{tab:quantiles_grdc}. The full AMS 100-year quantile exceeds the GLOF-masked
+estimate by \SI{15.0}{\percent} for BAFU~2219 and \SI{15.3}{\percent} for GRDC, growing
 to 18--20\,\% at 200 years. Masked and reference fits are closely aligned in both
 datasets.
 
@@ -118,9 +119,9 @@ datasets.
     \toprule
     $T$ [yr] & 2 & 5 & 10 & 20 & 50 & 100 & 200 \\
     \midrule
-    Full 1944--2025      & 16.47 & 22.12 & 26.81 & 32.38 & 41.08 & 48.99 & 58.68 \\
-    GLOF-masked          & 16.17 & 21.19 & 25.18 & 29.75 & 36.61 & 42.61 & 49.71 \\
-    Reference 1944--2010 & 15.87 & 20.53 & 24.09 & 28.04 & 33.77 & 38.61 & 44.17 \\
+    Full 1944--2025             & 16.47 & 22.12 & 26.81 & 32.38 & 41.08 & 48.99 & 58.68 \\
+    GLOF-masked 1944--2025      & 16.17 & 21.19 & 25.18 & 29.75 & 36.61 & 42.61 & 49.71 \\
+    Reference 1944--2010        & 15.87 & 20.53 & 24.09 & 28.04 & 33.77 & 38.61 & 44.17 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -134,9 +135,9 @@ datasets.
     \toprule
     $T$ [yr] & 2 & 5 & 10 & 20 & 50 & 100 & 200 \\
     \midrule
-    Full 1944--2020      & 10.86 & 13.13 & 14.90 & 16.82 & 19.68 & 22.14 & 24.90 \\
-    GLOF-masked          & 10.72 & 12.68 & 14.09 & 15.54 & 17.57 & 19.21 & 20.95 \\
-    Reference 1944--2010 & 10.61 & 12.54 & 13.93 & 15.38 & 17.41 & 19.07 & 20.83 \\
+    Full 1944--2020             & 10.86 & 13.13 & 14.90 & 16.82 & 19.68 & 22.14 & 24.90 \\
+    GLOF-masked 1944--2020      & 10.72 & 12.68 & 14.09 & 15.54 & 17.57 & 19.21 & 20.95 \\
+    Reference 1944--2010        & 10.61 & 12.54 & 13.93 & 15.38 & 17.41 & 19.07 & 20.83 \\
     \bottomrule
   \end{tabular}
 \end{table}
@@ -148,7 +149,10 @@ datasets.
            GLOF-masked (green), and reference (red) GEV fits with 95\,\% delta-method
            confidence bands. Black crosses mark GLOF-year annual maxima at their empirical
            return period under the full-series fit. The 2018 event at
-           $\hat{T} \approx 789$\,yr dominates the upper tail.}
+           $\hat{T} \approx 789$\,yr dominates the upper tail. The GLOF-masked curve
+           (green) lies slightly above the reference (red) at all return periods,
+           consistent with the systematic above-reference tendency of the masked annual
+           maxima; the difference is not statistically significant.}
   \label{fig:gev_three}
 \end{figure}
 
@@ -204,8 +208,8 @@ using the broader non-GLOF reference group.
     \multirow{4}{*}{BAFU 2219}
       & 5a & Pre-GLOF reference vs.\ GLOF-inclusive & 83.0  & 0.002 & Reject $H_0^{(1)}$ \\
       & 5b & Pre-GLOF reference vs.\ GLOF-masked    & 188.0 & 0.172 & Fail to reject $H_0^{(2)}$ \\
-      & 5c & GLOF-inclusive vs.\ non-GLOF years     & 507.0 & 0.001 & Reject \\
-      & 5d & GLOF-masked vs.\ non-GLOF years        & 390.0 & 0.167 & Fail to reject \\
+      & 5c & GLOF-inclusive vs.\ non-GLOF years     & 499.0 & 0.002 & Reject \\
+      & 5d & GLOF-masked vs.\ non-GLOF years        & 382.0 & 0.182 & Fail to reject \\
     \midrule
     \multirow{4}{*}{GRDC}
       & 5a & Pre-GLOF reference vs.\ GLOF-inclusive & 65.0  & $<$0.001 & Reject $H_0^{(1)}$ \\
@@ -223,7 +227,9 @@ using the broader non-GLOF reference group.
            return-period curve (1944--2010). The 2018 GLOF-inclusive peak (crimson,
            $\hat{T} \approx 789$\,yr) dominates; after masking it drops to
            $\hat{T} \approx 1.5$\,yr (blue triangle). Right: probability plot
-           (Module~1, \S3.2). GLOF-inclusive lie above the diagonal almost entirely
-           owing to 2018; GLOF-masked are broadly consistent with the 1:1 line.}
+           (Module~1, \S3.2). GLOF-inclusive lie far above the diagonal, driven by
+           2018. GLOF-masked also lie systematically above the 1:1 line, indicating
+           peaks slightly higher than the reference predicts; however, the shift does
+           not reach statistical significance (KS $p = 0.195$; Rank-Sum 5b: $p = 0.172$).}
   \label{fig:pp}
 \end{figure}
