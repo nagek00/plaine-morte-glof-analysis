@@ -184,30 +184,34 @@ GRDC: $D_n = 0.776$, $p < 0.001$). The GLOF-masked fail to reject $H_0^{(2)}$ in
 
 \subsubsection{Rank-Sum Test}
 
-Table~\ref{tab:ranksum} shows the Rank-Sum results. Comparison~5a rejects $H_0^{(1)}$ in both
-datasets. Comparison~5b fails to reject $H_0^{(2)}$, confirming masking restores homogeneity.
-Comparison~5c (pre-GLOF reference vs.\ GLOF-masked) also fails to reject
-(BAFU~2219: $p = 0.172$; GRDC: $p = 0.233$).
+Table~\ref{tab:ranksum} shows the Rank-Sum results. Comparison~5a directly tests
+$H_0^{(1)}$ and rejects in both datasets (BAFU~2219: $p = 0.002$; GRDC: $p < 0.001$).
+Comparison~5b directly tests $H_0^{(2)}$ and fails to reject in both (BAFU~2219:
+$p = 0.172$; GRDC: $p = 0.233$). Comparisons~5c and~5d corroborate these findings
+using the broader non-GLOF reference group.
 
 \begin{table}[H]
   \centering
   \caption{Rank-Sum test results (two-sided, $\alpha = 0.05$) for both discharge
-           datasets. Comparison~5c tests whether the GLOF-masked are consistent
-           with the pre-GLOF reference.}
+           datasets. Comparisons~5a and~5b directly test $H_0^{(1)}$ and $H_0^{(2)}$
+           against the pre-GLOF reference; comparisons~5c and~5d use all non-GLOF
+           years as additional corroboration.}
   \label{tab:ranksum}
   \begin{tabular}{lllccl}
     \toprule
     Dataset & & Comparison & $W$ & $p$-value & Decision \\
     \midrule
-    \multirow{3}{*}{BAFU 2219}
-      & 5a & GLOF-inclusive vs.\ non-GLOF years  & 499.0 & 0.002 & Reject $H_0^{(1)}$ \\
-      & 5b & GLOF-masked vs.\ non-GLOF years           & 382.0 & 0.182 & Fail to reject $H_0^{(2)}$ \\
-      & 5c & Pre-GLOF reference vs.\ GLOF-masked  & 188.0 & 0.172 & Fail to reject \\
+    \multirow{4}{*}{BAFU 2219}
+      & 5a & Pre-GLOF reference vs.\ GLOF-inclusive & 83.0  & 0.002 & Reject $H_0^{(1)}$ \\
+      & 5b & Pre-GLOF reference vs.\ GLOF-masked    & 188.0 & 0.172 & Fail to reject $H_0^{(2)}$ \\
+      & 5c & GLOF-inclusive vs.\ non-GLOF years     & 507.0 & 0.001 & Reject \\
+      & 5d & GLOF-masked vs.\ non-GLOF years        & 390.0 & 0.167 & Fail to reject \\
     \midrule
-    \multirow{3}{*}{GRDC}
-      & 5a & GLOF-inclusive vs.\ non-GLOF years        & 486.0 & 0.001 & Reject $H_0^{(1)}$ \\
-      & 5b & GLOF-masked vs.\ non-GLOF years                & 349.0 & 0.226 & Fail to reject $H_0^{(2)}$ \\
-      & 5c & Pre-GLOF reference vs.\ GLOF-masked & 198.0 & 0.233 & Fail to reject \\
+    \multirow{4}{*}{GRDC}
+      & 5a & Pre-GLOF reference vs.\ GLOF-inclusive & 65.0  & $<$0.001 & Reject $H_0^{(1)}$ \\
+      & 5b & Pre-GLOF reference vs.\ GLOF-masked    & 198.0 & 0.233    & Fail to reject $H_0^{(2)}$ \\
+      & 5c & GLOF-inclusive vs.\ non-GLOF years     & 486.0 & $<$0.001 & Reject \\
+      & 5d & GLOF-masked vs.\ non-GLOF years        & 349.0 & 0.226    & Fail to reject \\
     \bottomrule
   \end{tabular}
 \end{table}
