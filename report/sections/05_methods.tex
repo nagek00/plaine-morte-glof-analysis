@@ -25,8 +25,8 @@ From these series, the test groups summarised in Table~\ref{tab:series} are deri
     Reference        & Pre-GLOF annual maxima; basis for GEV fit         & 1944--2010        & 67 & 67 \\
     Full AMS         & Complete record, GLOF-inclusive                   & 1944--2025/2020   & 82 & 77 \\
     GLOF-masked AMS  & Full AMS with $\pm 5$-day GLOF windows removed    & 1944--2025/2020   & 82 & 77 \\
-    Group~A          & GLOF-inclusive peaks, GLOF period only            & 2011--2018        &  8 &  8 \\
-    Group~B          & GLOF-masked peaks, GLOF period only               & 2011--2018        &  8 &  8 \\
+    GLOF-inclusive peaks  & Full annual maxima, GLOF period only         & 2011--2018        &  8 &  8 \\
+    GLOF-masked peaks     & Masked annual maxima, GLOF period only       & 2011--2018        &  8 &  8 \\
     Non-GLOF years   & All years outside 2011--2018                      & 1944--2010, 2019--2025/2020 & 74 & 69 \\
     \bottomrule
   \end{tabular}
@@ -52,10 +52,10 @@ reference, applied identically to both datasets.
 reference GEV CDF (probability integral transform). The Kolmogorov--Smirnov statistic
 tests departure from Uniform(0,1) with critical value
 $C_\alpha = K_\alpha / (\sqrt{n} + 0.12 + 0.11/\sqrt{n})$, $K_{0.05} = 1.358$
-(Module~1, Eq.~3.3). Tests run separately for GLOF-inclusive (Group~A, $n = 8$) and
-GLOF-masked (Group~B, $n = 8$) peaks.
+(Module~1, Eq.~3.3). Tests run separately for GLOF-inclusive peaks ($n = 8$) and
+GLOF-masked peaks ($n = 8$).
 
 \textbf{Rank-Sum test}: the non-parametric Wilcoxon Rank-Sum test (Module~1, \S2.4.1)
-compares (5a) GLOF-year full peaks vs.\ non-GLOF years, (5b) GLOF-masked peaks
+compares (5a) GLOF-inclusive peaks vs.\ non-GLOF years, (5b) GLOF-masked peaks
 vs.\ non-GLOF years, and (5c) pre-GLOF reference vs.\ GLOF-masked peaks as a
 secular change check.
